@@ -69,10 +69,12 @@ if __name__ == "__main__":
 
 	#  Collect the data
 	prob = list(map(lambda x: x/REPEAT, freq))
-	data = {'winner': [0] * 5 + [1] * 4 + [-1],
+	data = {
+		'winner': [0] * 5 + [1] * 4 + [-1],
 		'round': list(range(4, 9)) + list(range(5, 9)) + [8],
 		'frequency': freq,
-		'prob': prob}
+		'prob': prob
+	}
 
 	#  Plot the results
 	plt.figure();
@@ -80,5 +82,5 @@ if __name__ == "__main__":
 	    lambda winner, round: "(" + str(winner) + ", " + str(round) + ")",
 	    [0] * 5 + [1] * 4 + [-1],
 	    list(range(4, 9)) + list(range(5, 9)) + [8]))
-	df = pandas.DataFrame(data, index=idx)
+	df = pandas.DataFrame(data=data['probability'], index=idx)
 	df.plot.bar()
