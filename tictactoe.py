@@ -69,12 +69,10 @@ if __name__ == "__main__":
 
 	#  Collect the data
 	prob = list(map(lambda x: x/REPEAT, freq))
-	data = {
-		'winner': [0] * 5 + [1] * 4 + [-1],
+	data = {'winner': [0] * 5 + [1] * 4 + [-1],
 		'round': list(range(4, 9)) + list(range(5, 9)) + [8],
 		'frequency': freq,
-		'prob': prob
-	}
+		'prob': prob}
 
 	#  Plot the results
 	plt.figure();
